@@ -1,0 +1,30 @@
+name: Sol-Challenge CTF
+
+default_ecosystem: ethereum
+ethereum:
+  default_network: local
+  local:
+    default_provider: foundry
+
+foundry:
+  fork:
+    ethereum:
+      mainnet:
+        upstream_provider: alchemy
+        block_number: 14850000
+
+dependencies:
+  - name: OpenZeppelin
+    github: OpenZeppelin/openzeppelin-contracts
+    version: 4.6.0
+
+solidity: 
+  import_remapping:
+    - "@openzeppelin=OpenZeppelin/4.6.0"
+
+plugins:
+  - name: vyper
+  - name: solidity
+  - name: foundry
+  - name: alchemy
+  - name: etherscan
